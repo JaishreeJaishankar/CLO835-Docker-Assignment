@@ -1,0 +1,4 @@
+.*
+!/.gitignore
+tf_architecture/compute/docker-assignment*
+!/.github/workflows

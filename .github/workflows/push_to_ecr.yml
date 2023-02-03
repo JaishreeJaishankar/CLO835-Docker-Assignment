@@ -1,7 +1,14 @@
 name: Deploy to ECR
 
-on: 
+on:
   push:
+    branches:
+      - prod
+      - dev
+    paths:
+      - web_application/*
+
+  pull_request:
     branches:
       - prod
       - dev

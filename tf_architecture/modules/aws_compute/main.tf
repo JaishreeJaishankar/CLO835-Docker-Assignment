@@ -40,7 +40,7 @@ resource "aws_key_pair" "sshKey" {
   public_key = file("${local.name_prefix}.pub")
 }
 
-# Creating BastionServer
+# Creating Compute Instance
 resource "aws_instance" "computeInstance" {
   ami                         = data.aws_ami.latest_amazon_linux.id
   instance_type               = var.instance_type
@@ -48,6 +48,7 @@ resource "aws_instance" "computeInstance" {
   subnet_id                   = data.terraform_remote_state.network.outputs.public_subnet_id
   security_groups             = [aws_security_group.computeSG.id]
   associate_public_ip_address = true
+  iam_instance_profile        = "LabInstanceProfile"
   user_data                   = file("${path.module}/install_httpd.sh")
   lifecycle {
     create_before_destroy = true

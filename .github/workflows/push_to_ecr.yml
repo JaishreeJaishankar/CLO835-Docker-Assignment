@@ -61,7 +61,7 @@ jobs:
       run: |
         echo "image=$ECR_REGISTRY/${APPLICATION_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG}" >> $GITHUB_OUTPUT
         echo "image=$ECR_REGISTRY/" >> $GITHUB_OUTPUT
-        docker build -t $ECR_REGISTRY/${DATABASE_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG} -f Dockerfile_mysql .
+        docker build -t $ECR_REGISTRY/$env.WORKING_DIR/${DATABASE_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG} -f Dockerfile_mysql .
         docker build -t $ECR_REGISTRY/${APPLICATION_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG} .
         docker push $ECR_REGISTRY/${DATABASE_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG}
         docker push $ECR_REGISTRY/${APPLICATION_ECR_PREFIX}-${ECR_REPOSITORY}:${IMAGE_TAG}

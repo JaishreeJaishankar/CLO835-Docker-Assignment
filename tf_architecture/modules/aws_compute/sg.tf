@@ -12,22 +12,22 @@ resource "aws_security_group" "computeSG" {
   }
   
   ingress {
-    from_port   = 81
-    to_port     = 81
+    from_port   = 8081
+    to_port     = 8081
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   
   ingress {
-    from_port   = 82
-    to_port     = 82
+    from_port   = 8082
+    to_port     = 8082
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   
   ingress {
-    from_port   = 83
-    to_port     = 83
+    from_port   = 8083
+    to_port     = 8083
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

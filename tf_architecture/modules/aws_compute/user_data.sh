@@ -1,7 +1,7 @@
 #! /bin/bash
 sudo yum install -y docker
 sudo service docker start
-export ECR=${data.aws_caller_identity.current.account_id}.dkr.ecr.us-east-1.amazonaws.com
+export ECR=570629616813.dkr.ecr.us-east-1.amazonaws.com
 export DBECR=$ECR/database-image-clo835-docker-assignment:latest
 export APPECR=$ECR/app-image-clo835-docker-assignment:latest
 export DBPORT=3306

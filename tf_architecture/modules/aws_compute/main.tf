@@ -49,7 +49,7 @@ resource "aws_instance" "computeInstance" {
   security_groups             = [aws_security_group.computeSG.id]
   associate_public_ip_address = true
   iam_instance_profile        = "LabInstanceProfile"
-  user_data                   = file("${path.module}/install_httpd.sh")
+  user_data                   = file("${path.module}/user_data.sh")
   lifecycle {
     create_before_destroy = true
   }

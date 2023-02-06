@@ -15,13 +15,9 @@ variable "region" {
   description = "AWS region in which our architecture is being deployed"
 }
 
-variable "vpc_cidr" {
-  type        = string
-  description = "CIDR range of VPC for the environment"
-}
-
 # Public subnets in VPC
 variable "public_subnet_cidr" {
+  default     = "172.31.128.0/20" 
   type        = string
   description = "Public Subnet CIDR"
 }
